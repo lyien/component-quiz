@@ -797,3 +797,171 @@ button {
     transition: none;
   }
 }
+
+/* ---------- Compact desktop sizing ----------
+   Everything ~15% smaller than the Figma frames so each screen's main card
+   fits a typical laptop browser window (about 1440 × 780). */
+
+@media (min-width: 768px) {
+  :root {
+    --spacing-lg: 20px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 36px;
+    --spacing-3xl: 48px;
+    --card-width: 600px;
+    --font-size-h1: 40px;
+    --line-height-h1: 46px;
+    --font-size-h2: 30px;
+    --line-height-h2: 36px;
+    --font-size-body-lg: 18px;
+    --line-height-body-lg: 26px;
+    --font-size-body-sm: 13px;
+    --line-height-body-sm: 18px;
+    --font-size-eyebrow: 14px;
+    --line-height-eyebrow: 18px;
+  }
+
+  .screen--top {
+    padding: 24px 24px 32px;
+    gap: 16px;
+  }
+  .screen--intro {
+    padding-top: clamp(24px, 6vh, 72px);
+  }
+  .screen--center,
+  .screen--gallery {
+    padding: 32px 48px;
+  }
+
+  .btn {
+    padding: 5px 14px;
+    min-width: 88px;
+  }
+  .btn svg,
+  .btn-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .intro {
+    gap: 32px;
+  }
+  .intro__text {
+    gap: 16px;
+  }
+  .intro__art {
+    max-width: min(100%, calc((100vh - 400px) * 572 / 323));
+    margin: 0 auto;
+  }
+  .site-footer {
+    padding: 16px 0;
+  }
+
+  .question {
+    gap: 32px;
+  }
+  .answers {
+    gap: 12px;
+  }
+  .answer {
+    min-height: 52px;
+    padding: 12px 14px;
+  }
+  .answer__radio {
+    width: 18px;
+    height: 18px;
+  }
+  .answer input:checked + .answer__radio {
+    border-width: 5px;
+  }
+
+  .loading {
+    height: min(560px, calc(100vh - 120px));
+    min-height: 420px;
+    gap: var(--spacing-2xl);
+  }
+  .marquee {
+    height: 220px;
+  }
+  .marquee__group img {
+    max-height: 150px;
+  }
+  .marquee__group {
+    gap: 64px;
+    padding-right: 64px;
+  }
+
+  .result {
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    gap: var(--spacing-xl);
+  }
+  .result__profile {
+    gap: 16px;
+  }
+  .result__head {
+    gap: 4px;
+  }
+  .result__art {
+    height: clamp(190px, 27vh, 280px);
+  }
+  .result__art-img {
+    padding: 16px 32px 0;
+  }
+  .result__caption {
+    margin-top: 16px;
+  }
+  .result__details {
+    gap: 12px;
+  }
+
+  .gallery {
+    gap: var(--spacing-xl);
+  }
+  .gallery__grid {
+    gap: 16px 12px;
+    max-height: calc(100vh - 260px);
+    min-height: 240px;
+  }
+  .tile {
+    height: 160px;
+    gap: 24px;
+  }
+  .tile__art,
+  .tile__art img {
+    max-height: 60px;
+  }
+  .tile__art {
+    height: 60px;
+  }
+  .tile__art img {
+    max-width: 170px;
+  }
+  .tile__art--wide img {
+    max-width: 200px;
+  }
+}
+
+/* Shorter laptop windows: tighten a little more */
+@media (min-width: 768px) and (max-height: 720px) {
+  .screen--center,
+  .screen--gallery {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .intro {
+    padding-top: 36px;
+    padding-bottom: 36px;
+    gap: 24px;
+  }
+  .result {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 20px;
+  }
+  .result__art {
+    height: 170px;
+  }
+  .result__profile {
+    gap: 12px;
+  }
+}
